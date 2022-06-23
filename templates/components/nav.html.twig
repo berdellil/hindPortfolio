@@ -1,0 +1,67 @@
+<!-- ************************************NAVBAR*************************************** -->
+
+{# ************************************************************************************************** #} 
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+	<div class="container">
+		<a
+			href="#" class="navbar-brand">
+			<!-- *****************************************Logo********************************************* -->
+			<img src="../../assets/img/logo.png" height="90" alt="hb"/>
+		</a>
+     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+
+			<div class="navbar">
+
+     
+
+				<a href="{{path('app_accueil')}}" class="nav-item nav-link active">
+					<i class="fa-solid fa-house"></i>Accueil</a>
+
+				<a href="{{path('app_propos')}}" class="nav-item nav-link active">
+					<i class="fa-solid fa-circle-question"></i>
+				</ion-icon>A Propos</a>
+
+			<a href="{{path('app_competences_tout')}}" class="nav-item nav-link">
+				<i class="fa-solid fa-lightbulb"></i>Compétences</a>
+
+			<a href="{{path('app_formations_tout')}}" class="nav-item nav-link">
+				<i class="fa-solid fa-graduation-cap"></i>
+				Formations</a>
+
+			<a href="{{path('app_projets_all')}} " class="nav-item nav-link">
+				<i class="fa-solid fa-backpack"></i>
+				Mes Projets</a>
+
+			<a href="{{path('app_contact')}}" class="nav-item nav-link">
+				<i class="fa-solid fa-envelope"></i>
+				Contact</a> 
+
+
+		 </div>
+      {# ************************************Admin******************************** #}
+	  
+          <div class="admin">
+              {# <a  href="{{path('app_logout')}}">Inscription</a><br> #}
+              {# <a  href="{{path('app_login')}}"><i class="fas fa-user"></i> Connexion Admin</a><br> #}
+			  {% if app.user %}
+              <a  href="{{path('app_logout')}}">  Déconnexion</a><br>
+         </div>
+		 {% endif %}
+     
+   </div>
+
+    </div>
+
+    
+</nav>   
+ 
+
+
+

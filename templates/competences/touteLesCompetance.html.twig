@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CompetencesController!
+{% endblock %}
+
+{% block body %}
+<h1><img src="../../assets/img/mes c.png" class="Image2"></h1>
+
+<div class="comp">
+		<div class="container">	
+
+            <div class="row">
+
+				    {% for competences in competences %}
+					    
+						<div class="col-md-3 mt-3 d-flex ">
+							
+							<div class="col-md-2 m-3" style="width: 18rem">
+								<img src="{{competences.logo}}" class="card-img-top" alt="...">
+								
+									<p class="card-text">{{competences.nom}}</p>
+									<p class="card-text" style="font-size:20px">{{competences.niveau}}</p>
+                                    
+                                    {# <div class="progresss">
+                                     <progress value="50%" max="200">50%</progress> 
+                                     </div>
+									 #}
+									<br>
+
+									<td>
+										<a class="btnc" href="{{path('app_admin_competences_edit',{id: competences.id})}}">Modifier</a>
+									</td>
+
+									<td>
+										<a class="btnc" href="{{ path('app_admin_competences_delete',{id: competences.id}) }}" onclick="return confirm('Etes vous sûr de vouloir cette suppression ?...')">Supprimer</a>
+									</td>
+
+								  
+							  
+						    </div>
+					    </div>
+
+
+				    {% endfor %}
+	        </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Contact{% endblock %}
+
+
+
+{% block body %}
+
+
+
+<div class="container">
+
+    <div class="row">
+
+
+
+        <table class="table">
+
+            <thead>
+
+              <tr>
+
+                <th scope="col">id</th>
+
+                <th scope="col">Nom</th>
+
+                <th scope="col">Prénom</th>
+
+                <th scope="col">Mail</th>
+
+                <th scope="col">Télephone</th>
+
+                <th scope="col">Message</th>  
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+       {% for contact in contact %}
+
+              <tr>
+
+                <th scope="row">{{contact.id}}</th>
+
+                <td>{{contact.nom}}</td>
+
+                <td>{{contact.prenom}}</td>
+
+                <td>{{contact.mail}}</td>
+
+                <td>{{contact.telephone}}</td>
+
+                <td>{{contact.message}}</td>                                
+
+              </tr>
+
+        {% endfor %}
+
+       
+
+            </tbody>
+
+        </table>
+
+</div>
+
+
+
+{% endblock %}

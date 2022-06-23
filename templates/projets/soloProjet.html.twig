@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjetsController!{% endblock %}
+
+{% block body %}
+<h1>{{projets.nom}}</h1>
+<div class="container">
+
+  <div class="card mb-3">
+        <img
+            style="width: 150; height: 100rem"
+            src="{{asset('uploads/image/' ~ projets.image)}}"
+        />
+
+   
+  </div>
+
+{% endblock %}

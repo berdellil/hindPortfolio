@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FORMATIONS
+{% endblock %}
+
+{% block body %}
+
+<div class="Page"> 
+        
+		<h1>Mes Formations <img src="../../assets/img/DIPLOME-71.png" class="Image"></h1>
+           
+
+		<div class="row ">
+		
+			{% for formations in formations %}
+			
+
+				<div class="col-md-4 mt-5 d-flex mt-5 blanc">
+
+
+					<div class="text-color ">
+
+						<div class="photo"><img src="{{formations.logo}}" style="width:6em; height:6em"></div>
+
+						<p class="card-text text-color">{{formations.titre}}</p>
+						<p class="card-text text-color">{{formations.organisme}}</p>
+
+						<div class="btn1">
+							<td>
+								<a class="btn1  btn-outline-secondary" href="{{path('app_admin_formations_edit',{id: formations.id})}}">Modifier</a>
+							</td>
+
+							<td>
+								<a class="btn1   btn-outline-secondary " href="{{ path('app_admin_formations_delete',{id:formations.id}) }}" onclick="return confirm('Etes vous sûr de vouloir cette suppression ?...')">Supprimer</a>
+							</td>
+						</div>
+					</div>
+
+
+				</div>
+        
+			{% endfor %}
+		</div>
+
+</div> 
+
+{% endblock %}
